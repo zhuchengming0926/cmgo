@@ -5,7 +5,7 @@ import (
 	"cmgo/utils"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"strconv"
@@ -132,7 +132,7 @@ func GetServerIDC() (name string) {
 		return
 	}
 	defer resp.Body.Close()
-	body, _ := ioutil.ReadAll(resp.Body)
+	body, _ := io.ReadAll(resp.Body)
 	var res result
 	err = json.Unmarshal(body, &res)
 	if err == nil && res.IDC != "" {
