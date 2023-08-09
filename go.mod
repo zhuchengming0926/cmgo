@@ -16,7 +16,6 @@ require (
 	github.com/lestrrat-go/strftime v1.0.6 // indirect
 	github.com/lockp111/consul-kv v1.3.0
 	github.com/panjf2000/ants/v2 v2.7.1
-	github.com/xuri/excelize/v2 v2.7.0
 	go.uber.org/zap v1.24.0
 	golang.org/x/crypto v0.5.0
 	gorm.io/driver/mysql v1.4.5

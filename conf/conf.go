@@ -15,6 +15,24 @@ type MysqlConfig struct {
 	Database string `json:"database"`
 }
 
+type Consul struct {
+	Token       string `json:"token"`
+	Port        string `json:"port"`
+	ServiceName string `json:"service_name"`
+}
+
+type ConsulKVConfig struct {
+	ConsulAddress      string `json:"consul_address"`
+	UseLocalAgent      bool   `json:"use_local_agent"`
+	FeatureServicePath string `json:"feature_service_path"`
+	Port               int    `json:"feature_service_port"`
+	CheckConsulTimeout int    `json:"check_consul_timeout"`
+}
+
+func GetConsulKVConfig() *ConsulKVConfig {
+	return &ConsulKVConfig{}
+}
+
 func GetMysqlConfig() *MysqlConfig {
 	return &MysqlConfig{
 		Driver:   "mysql",

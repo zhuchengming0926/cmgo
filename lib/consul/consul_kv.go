@@ -5,8 +5,8 @@ import (
 	"log"
 	"time"
 
-	"server/conf"
-	"server/libs/logger"
+	"cmgo/conf"
+	"cmgo/lib/logger"
 
 	kv "github.com/lockp111/consul-kv"
 	"go.uber.org/zap"
@@ -24,7 +24,7 @@ type ConsulKVClient struct {
 }
 
 func NewConsulKVClient() ConsulKVClient {
-	consulAddress := conf.GetConfig().BaseConfig.ConsulKV.ConsulAddress
+	consulAddress := conf.GetConsulKVConfig().ConsulAddress
 	cli := kv.NewConfig(kv.WithAddress(consulAddress))
 	err := cli.Init()
 	if err != nil {
